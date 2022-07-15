@@ -1,0 +1,62 @@
+Image Segmentation data set
+
+1: Description.
+
+This database contains instances drawn randomly from a database of 7 outdoor images (classes). The images were handsegmented to create a classification for every pixel. Each instance encodes a 3x3 region. 
+
+The task is to determine the type of surface of each region. 
+
+Attributes description: 
+
+1. Region-centroid-col: the column of the center pixel of the region. 
+2. Region-centroid-row: the row of the center pixel of the region. 
+3. Region-pixel-count: the number of pixels in a region = 9. 
+4. Short-line-density-5: the results of a line extractoin algorithm that counts how many lines of length 5 (any orientation) with low contrast, less than or equal to 5, go through the region. 
+5. Short-line-density-2: same as short-line-density-5 but counts lines of high contrast, greater than 5. 
+6. Vedge-mean: measure the contrast of horizontally adjacent pixels in the region. There are 6, and this is the mean value. This attribute is used as a vertical edge detector. 
+7. Vegde-sd: the contrast of horizontally adjacent pixels in the region. There are 6, and this is the standard deviation. This attribute is used as a vertical edge detector. 
+8. Hedge-mean: measures the contrast of vertically adjacent pixels. Used for horizontal line detection (mean) 
+9. Hedge-sd: measures the contrast of vertically adjacent pixels. Used for horizontal line detection (standard deviation) 
+10. Intensity-mean: the average over the region of (R + G + B)/3 
+11. Rawred-mean: the average over the region of the R value. 
+12. Rawblue-mean: the average over the region of the B value. 
+13. Rawgreen-mean: the average over the region of the G value. 
+14. Exred-mean: measure the excess red: (2R - (G + B)) 
+15. Exblue-mean: measure the excess blue: (2B - (G + R)) 
+16. Exgreen-mean: measure the excess green: (2G - (R + B)) 
+17. Value-mean: 3-d nonlinear transformation of RGB (see James D. Foley and Andries Van Dam. 1982. Fundamentals of Interactive Computer Graphics. Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA) 
+18. Saturatoin-mean: (see James D. Foley and Andries Van Dam. 1982. Fundamentals of Interactive Computer Graphics. Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA.) 
+19. Hue-mean: (see James D. Foley and Andries Van Dam. 1982. Fundamentals of Interactive Computer Graphics. Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA.)
+
+2: Type.			Classification	
+3: Origin.			Real world
+4: Instances.		2310
+5: Features.		19
+6: Classes.			7	
+7: Missing values.	No
+
+8: Header.
+
+@relation segment
+@attribute Region-centroid-col real [1.0, 254.0]
+@attribute Region-centroid-row real [11.0, 251.0]
+@attribute Region-pixel-count real [9.0, 10.0]
+@attribute Short-line-density-5 real [0.0, 0.33333334]
+@attribute Short-line-density-2 real [0.0, 0.22222222]
+@attribute Vedge-mean real [0.0, 29.222221]
+@attribute Vegde-sd real [0.0, 991.7184]
+@attribute Hedge-mean real [0.0, 44.722225]
+@attribute Hedge-sd real [-1.5894573E-8, 1386.3292]
+@attribute Intensity-mean real [0.0, 143.44444]
+@attribute Rawred-mean real [0.0, 137.11111]
+@attribute Rawblue-mean real [0.0, 150.88889]
+@attribute Rawgreen-mean real [0.0, 142.55556]
+@attribute Exred-mean real [-49.666668, 9.888889]
+@attribute Exblue-mean real [-12.444445, 82.0]
+@attribute Exgreen-mean real [-33.88889, 24.666666]
+@attribute Value-mean real [0.0, 150.88889]
+@attribute Saturatoin-mean real [0.0, 1.0]
+@attribute Hue-mean real [-3.0441751, 2.9124804]
+@attribute Class {1, 2, 3, 4, 5, 6, 7}
+@inputs Region-centroid-col, Region-centroid-row, Region-pixel-count, Short-line-density-5, Short-line-density-2, Vedge-mean, Vegde-sd, Hedge-mean, Hedge-sd, Intensity-mean, Rawred-mean, Rawblue-mean, Rawgreen-mean, Exred-mean, Exblue-mean, Exgreen-mean, Value-mean, Saturatoin-mean, Hue-mean
+@outputs Class

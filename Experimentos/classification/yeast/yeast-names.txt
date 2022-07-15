@@ -1,0 +1,37 @@
+Yeast data set
+
+1: Description.
+
+This database contains information about a set of Yeast cells. The task is to determine the localization site of each cell among 10 possible alternatives. 
+
+Attributes description: 
+- Mcg: McGeoch's method for signal sequence recognition. 
+- Gvh: von Heijne's method for signal sequence recognition. 
+- Alm: Score of the ALOM membrane spanning region prediction program. 
+- Mit: Score of discriminant analysis of the amino acid content of the N-terminal region (20 residues long) of mitochondrial and non-mitochondrial proteins. 
+- Erl: Presence of "HDEL" substring (thought to act as a signal for retention in the endoplasmic reticulum lumen). Binary attribute. 
+- Pox: Peroxisomal targeting signal in the C-terminus. 
+- Vac: Score of discriminant analysis of the amino acid content of vacuolar and extracellular proteins. 
+- Nuc: Score of discriminant analysis of nuclear localization signals of nuclear and non-nuclear proteins.
+
+2: Type.			Classification	
+3: Origin.			Real world
+4: Instances.		1484
+5: Features.		8
+6: Classes.			10	
+7: Missing values.	No
+
+8: Header.
+
+@relation yeast
+@attribute Mcg real [0.11, 1.0]
+@attribute Gvh real [0.13, 1.0]
+@attribute Alm real [0.21, 1.0]
+@attribute Mit real [0.0, 1.0]
+@attribute Erl real [0.5, 1.0]
+@attribute Pox real [0.0, 0.83]
+@attribute Vac real [0.0, 0.73]
+@attribute Nuc real [0.0, 1.0]
+@attribute Class {MIT, NUC, CYT, ME1, ME2, ME3, EXC, VAC, POX, ERL}
+@inputs Mcg, Gvh, Alm, Mit, Erl, Pox, Vac, Nuc
+@outputs Class

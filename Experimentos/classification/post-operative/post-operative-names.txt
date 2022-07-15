@@ -1,0 +1,63 @@
+Post-Operative data set
+
+1: Description.
+
+The classification task of this database is to determine where patients in a postoperative recovery area should be sent to next. Because hypothermia is a significant concern after surgery, the attributes correspond roughly to body temperature measurements. 
+
+The class label can take one of the following values: I (patient sent to Intensive Care Unit), S (patient prepared to go home), A (patient sent to general hospital floor). 
+
+Attributes description: 
+
+1. L-CORE (patient's internal temperature in C): high (> 37), mid (>= 36 and <= 37), low (< 36) 
+2. L-SURF (patient's surface temperature in C): high (> 36.5), mid (>= 36.5 and <= 35), low (< 35) 
+3. L-O2 (oxygen saturation in %): excellent (>= 98), good (>= 90 and < 98), fair (>= 80 and < 90), poor (< 80) 
+4. L-BP (last measurement of blood pressure): high (> 130/90), mid (<= 130/90 and >= 90/70), low (< 90/70) 
+5. SURF-STBL (stability of patient's surface temperature): stable, mod-stable, unstable 
+6. CORE-STBL (stability of patient's core temperature): stable, mod-stable, unstable 
+7. BP-STBL (stability of patient's blood pressure): stable, mod-stable, unstable 
+8. COMFORT (patient's perceived comfort at discharge)
+
+2: Type.			Classification	
+3: Origin.			Real world
+4: Instances.		87 (90)
+5: Features.		8
+6: Classes.			3	
+7: Missing values.	Yes
+
+8: Header.
+@relation post-operative
+@attribute L-CORE {mid, high, low}
+@attribute L-SURF {low, high, mid}
+@attribute L-O2 {excellent, good}
+@attribute L-BP {mid, high, low}
+@attribute SURF-STBL {stable, unstable}
+@attribute CORE-STBL {stable, unstable, mod-stable}
+@attribute BP-STBL {stable, mod-stable, unstable}
+@attribute COMFORT {15, 10, 05, 07}
+@attribute Decision {A, S, I}
+@inputs L-CORE, L-SURF, L-O2, L-BP, SURF-STBL, CORE-STBL, BP-STBL, COMFORT
+@outputs Decision
+
+Attribute Information:
+
+1. L-CORE (patient's internal temperature in C):
+high (> 37), mid (>= 36 and <= 37), low (< 36)
+2. L-SURF (patient's surface temperature in C):
+high (> 36.5), mid (>= 36.5 and <= 35), low (< 35)
+3. L-O2 (oxygen saturation in %):
+excellent (>= 98), good (>= 90 and < 98),
+fair (>= 80 and < 90), poor (< 80)
+4. L-BP (last measurement of blood pressure):
+high (> 130/90), mid (<= 130/90 and >= 90/70), low (< 90/70)
+5. SURF-STBL (stability of patient's surface temperature):
+stable, mod-stable, unstable
+6. CORE-STBL (stability of patient's core temperature)
+stable, mod-stable, unstable
+7. BP-STBL (stability of patient's blood pressure)
+stable, mod-stable, unstable
+8. COMFORT (patient's perceived comfort at discharge, measured as
+an integer between 0 and 20)
+9. decision ADM-DECS (discharge decision):
+I (patient sent to Intensive Care Unit),
+S (patient prepared to go home),
+A (patient sent to general hospital floor)

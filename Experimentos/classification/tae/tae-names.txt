@@ -1,0 +1,32 @@
+Teaching Assistant Evaluation data set
+
+1: Description.
+
+The data consist of evaluations of teaching performance over three regular semesters and two summer semesters of 151 teaching assistant (TA) assignments at the Statistics Department of the University of Wisconsin-Madison. The scores were divided into 3 roughly equal-sized categories (low (1), medium (2), and high (3)) to form the class variable. 
+
+Attributes description: 
+
+1. Native -> whether of not the TA is a native English speaker: 1 = English speaker, 2 = non-English speaker. 
+2. Instructor -> course instructor (25 categories). 
+3. Course -> 26 categories. 
+4. Semester -> summer or regular semester: 1 = Summer, 2 = Regular. 
+5. Size -> class size (numerical).
+
+2: Type.			Classification	
+3: Origin.			Laboratory
+4: Instances.		151
+5: Features.		5
+6: Classes.			3	
+7: Missing values.	No
+
+8: Header.
+@relation tae
+@attribute Native integer [1, 2]
+@attribute Instructor integer [1, 25]
+@attribute Course integer [1, 26]
+@attribute Semester integer [1, 2]
+@attribute Size integer [3, 66]
+@attribute Class {1, 2, 3}
+@inputs Native, Instructor, Course, Semester, Size
+@outputs Class
+ 
